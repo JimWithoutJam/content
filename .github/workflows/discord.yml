@@ -4,7 +4,7 @@ on:
   release:
     types: [published]
 
-jobs: 
+jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
@@ -13,9 +13,9 @@ jobs:
           with:
             persist-credentials: false
             fetch-depth: 0
-        
-        - name: Publish to Discord 
-          uses: indiainvestments/faq-to-discord-action@main
+
+        - name: Publish to Discord
+          uses: JimWithoutJam/faq-to-discord-action@main
           with:
             faq_glob: "faqs/*.md"
             website_base_url: ${{ secrets.GITBOOK_DOMAIN }}
